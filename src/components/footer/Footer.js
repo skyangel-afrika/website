@@ -3,7 +3,7 @@ import './Footer.css';
 import { Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-import logo from '../assets/images/logo.png'
+import logo from '../../assets/images/logowhite.png'
 
 function Footer() {
   return (

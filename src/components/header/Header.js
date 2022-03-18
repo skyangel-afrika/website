@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-import logo from '../assets/images/logo.png'
+import logo from '../../assets/images/logo.png'
 
 function Header() {
   const [click, setClick] = useState(false);
@@ -53,11 +53,11 @@ function Header() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/management'
+                to='/team'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Management
+                Our Team
               </Link>
             </li>
             <li className='nav-item'>
@@ -80,7 +80,9 @@ function Header() {
               </Link>
             </li>
           </ul>
-          {button && <Button variant='outlined' color='inherit' style={{backgroundColor: '#e1e1e1', fontSize: '13px', borderRadius: 10 }}>BOOKINGS</Button>}
+          <Link to='/booking' style={{textDecoration: 'none'}}>
+            {button && <Button variant='contained'  style={{backgroundColor: '#333333', color: '#e1e1e1', fontSize: '13px', borderRadius: 10 }}>BOOKINGS</Button>}
+          </Link>
         </div>
       </nav>
     </>

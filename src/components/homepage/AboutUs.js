@@ -1,64 +1,73 @@
 import React from 'react';
 import {Container, Typography, Grid, Card, CardContent} from '@mui/material'; 
 
+import businessCharter from '../../assets/images/service/businessCharter.jpg';
+import ambulance from '../../assets/images/service/ambulance.jpg';
+import cargo from '../../assets/images/service/cargo.jpg';
+
+
 function AboutUs() {
   return (
     <div>
         <Container maxWidth='lg' style={{marginTop: '30px', marginBottom: '20px'}}>
             <Container maxWidth='md'>
-                <Typography variant='h4' align='center' color='#333333' marginBottom='15px'> Why Work With Us?</Typography>
-                <Typography variant='body' align='center' color='#333333' style={{fontSize: '18px'}}>
-                    SkyAngel encompasses luxury, comfort, safety and flexibility to ensure an experience of a lifetime. The comfort and professional service of charter flying is unlimited. Offering luxury and efficient disservices, we provide Private Jets, Helicopters and accommodation facilities upon your request.
+                <Typography variant='h4' align='center' style={{color: '#333333'}} marginBottom='15px'> Why SkyAngel?</Typography>
+                <Typography variant='h6' align='center' style={{color: '#333333', fontSize: '1.1rem'}} >
+                With us, comfort and a professional service on your private charter flights are matched with attention to detail for your peace of mind. We offer an efficient service and boast a large fleet of impressive charter aircraft.
                 </Typography>
                 <br/>
-                <Typography variant='body' align='center' color='#333333' style={{fontSize: '18px'}}>
-                    A friendly 24x7 support team can accommodate all of your basic and advanced needs.
-                </Typography>
+
             </Container>
-            <Grid container   style={{marginTop: '30px'}}  spacing={5} padding='40px, 0'  alignItems='stretch' marginTop='30px'>
+            <Grid container   style={{marginTop: '30px'}}  spacing={5} padding='40px, 0'  alignItems='stretch'>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Card>
-                       <CardContent style ={{backgroundColor: "#fffdd0" , height: '200px'}}>
-                            <Typography variant='h5' style={{color: '#333333'}} gutterBottom>
-                                Service
+                    <Card  style ={{
+                            backgroundImage: `url(${businessCharter})` , 
+                            height: '400px',
+                        }}
+                    >
+                        <CardContent>
+                            <Typography  alignItems='center' variant='h5' style={{   color: '#fff', marginTop:'220px' }} >
+                                Private Charter Flights  
                             </Typography>
-                            <hr/>
-                            <Typography sx={{ mb: 1.5 }} style={{color: '#333333'}}>
-                                 Personalised solutions according to your needs. 
+                            <br/>
+                            <Typography sx={{ mb: 1.5 }} style={{fontSize: "1.0rem", color: '#fff'}}>
+                                SkyAngel encompasses luxury, comfort, safety and flexibility to ensure an experience of a lifetime. The comfort and professional service of charter flying is unlimited. 
                             </Typography>
-                            <Typography sx={{ mb: 1.5 }} style={{color: '#333333'}}>
-                                 Minimal contact. Easy Booking system. Fast quote. 
-                            </Typography>
-                        </CardContent>
+                        </CardContent>    
                     </Card>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Card>
-                       <CardContent style ={{backgroundColor: "#fffdd0" , height: '200px'}}>
-                            <Typography variant='h5' style={{color: '#333333'}} gutterBottom>
-                                Safety & Price
+                    <Card  style ={{
+                            backgroundImage: `url(${ambulance})` , 
+                            height: '400px',
+                        }}
+                    >
+                        <CardContent>
+                            <Typography  alignItems='center' variant='h5' style={{   color: '#fff', marginTop:'220px' }} >
+                                Ambulance & Emergency Services
                             </Typography>
-                            <hr/>
-                            <Typography sx={{ mb: 1.5 }} style={{color: '#333333'}}>
-                                We work with international certified partners
+                            <br/>
+                            <Typography sx={{ mb: 1.5 }} style={{fontSize: "1.0rem", color: '#fff'}}>
+                                We ensure a rapid response time to any medical emergency or evacuation from a high-risk environment. 
                             </Typography>
-                            <Typography sx={{ mb: 1.5 }} style={{color: '#333333'}}>
-                                Flexible pricing. No hidden fees. Minimal markup.
-                            </Typography>
-                        </CardContent>
+                        </CardContent>    
                     </Card>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Card>
-                       <CardContent style ={{backgroundColor: "#fffdd0" , height: '200px'}}>
-                            <Typography variant='h5' style={{color: '#333333'}} gutterBottom>
-                                Privacy
+                    <Card  style ={{
+                            backgroundImage: `url(${cargo})` , 
+                            height: '400px',
+                        }}
+                    >
+                        <CardContent>
+                            <Typography  alignItems='center' variant='h5' style={{   color: '#fff', marginTop:'220px' }} >
+                                Cargo Services
                             </Typography>
-                            <hr/>
-                            <Typography sx={{ mb: 1.5 }} style={{color: '#333333'}}>
-                                Discretion ensured by a non-disclosure agreement. 
+                            <br/>
+                            <Typography sx={{ mb: 1.5 }} style={{fontSize: "1.0rem", color: '#fff'}}>
+                                SkyAngel offers unique cargo services. We can accommodate anything to suit your personal needs.
                             </Typography>
-                        </CardContent>
+                        </CardContent>    
                     </Card>
                 </Grid>
             </Grid>

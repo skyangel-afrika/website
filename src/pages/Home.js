@@ -1,17 +1,19 @@
 import React from 'react';
 import {Parallax} from 'react-parallax';
-import { Typography, Button } from '@mui/material';
+import { Typography, Button, Container } from '@mui/material';
+import {Link} from 'react-router-dom';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import home1 from '../assets/images/homepage/2.jpg';
-import home2 from '../assets/images/homepage/3.jpg';
-import home3 from '../assets/images/homepage/1.jpg';
+import home1 from '../assets/images/homepage/slide6.jpg';
+import home2 from '../assets/images/homepage/slide2.jpg';
 
 
 import AboutUs from '../components/homepage/AboutUs';
-import Services from '../components/homepage/Services';
+import CarouselContainer from '../components/homepage/Carousel';
+
 
 const imageText = {
-  background: 'rgba(150, 75, 0, 0.8)',
+  background: 'transparent',
   left: '50%',
   top: '60%',
   position: 'absolute',
@@ -22,62 +24,100 @@ const imageText = {
 
 function Home() {
   return (
-    <div>
-      <Parallax bgImage={home1} strength={500}>
-        <div style={{height: 600}}>
-          <div style={imageText}>
-            <Typography  style={{color: '#e1e1e1'}} variant= "h2" align='center' >
-              Adventure Awaits!
-            </Typography>
-            <Typography style={{color: '#e1e1e1'}} variant= "h6" align='center' >
-              What are you waiting for?
-            </Typography>
-          </div>
-        </div>
-      </Parallax>
-      <AboutUs/>
-      <Parallax bgImage={home2} strength={700}>
-        <div style={{height: 600}}>
-          <div style={imageText}>
-            <Typography  style={{color: '#e1e1e1'}} variant= "h4" align='center' >
-              The sky is not the limit
-            </Typography>
-            <Typography style={{color: '#e1e1e1'}} variant= "h6" align='center' >
-              It's our territory
-            </Typography>
-          </div>
-        </div>
-      </Parallax>
-      <Services/>
+    <div >
+      <CarouselContainer />
+      <AboutUs />
+      
 
-      <Parallax bgImage={home3} strength={300}>
+      <Parallax bgImage={home1} strength={350}>
         <div style={{height: 600}}>
           <div style={imageText}>
-            <Typography  style={{color: '#e1e1e1'}} variant= "h4" align='center' >
+            <Typography  style={{color: '#fff'}} variant= "h3" align='center' >
               What's Your Next Destination?
             </Typography>
-            <Typography  style={{color: '#e1e1e1'}} variant= "h6" align='center' >
+            <Typography  style={{color: '#fff'}} variant= "h5" align='center' >
               Let us take you there
             </Typography>
             
           </div>
-          <Button 
-            variant='outlined'
-            style={{
-              backgroundColor: 'rgba(150, 75, 0, 0.8)',
-              color: '#e1e1e1',
-              fontSize: '20px',
-              borderRadius: '10px',
-              top: '80%' }}
-            >
-              Make a Booking
-            </Button>
+          <Link to='/booking' style={{textDecoration: 'none'}}>
+            <Button 
+              variant='contained'
+              style={{
+                backgroundColor: '#726e69c2',
+                color: '#fff',
+                fontSize: '20px',
+                borderRadius: '10px',
+                top: '80%' }}
+              >
+                Make a Reservation
+              </Button>
+            </Link>
         </div>
       </Parallax>
-
+      <Container maxWidth='md' style={{marginTop: '30px'}}>
+        <Typography style={{color: '#333333'}} variant='h4' align='center'>
+          Dear friends of SkyAngel
+        </Typography>
+        <br/>
+        <Typography align='center'   style={{color: '#333333', fontSize: '1.1rem'}}>
+          It is with an absolute dedication to service, excellence, innovation and a single-minded drive for growth that SkyAngel has approached the last few years of business, and it is this continued focus that has enabled us to build a strategic roadmap that will continue to deliver customer excellence well into the future. We believe that at the heart of the success for SkyAngel Private Jet Charters is our flexibility of solution design, engaged focus on safety and innovation and a drive to delight customers and it is this ethos which will carry us forward into the future.
+        </Typography>
+        <br/>
+        <Typography  style={{color: '#333333', fontSize: '1.1rem'}} align='center'>
+          The Sky Is Not The Limit It Is Our Territory. Let Us Claim It together!
+        </Typography>
+        <br/>
+        <Typography  style={{color: '#333333', fontSize: '1.1rem'}} align='center'>
+          See you onboard
+        </Typography>
+        <Typography  style={{color: '#333333', fontSize: '1.1rem'}} align='center'>
+          Yours in flight,
+        </Typography>
+        <Typography  style={{color: '#333333', fontSize: '1.1rem'}} align='center'>
+          Nyasha Paradzai
+        </Typography>
+        <Typography variant='subtitle1' align='center'>
+          CEO
+        </Typography>
+        <br/>
+      </Container>
+      <Parallax bgImage={home2} strength={400} blur={{min: -90, max: 0}}>
+        <div style={{height: 600}}>
+          <div style={imageText}>
+            <Typography  style={{color: '#fff'}} variant= "h3" align='center' >
+              Adventure Awaits!
+            </Typography>
+            <br/>
+            <Typography  style={{color: '#fff'}} variant= "h5" align='center' >
+              What are you waiting for?
+            </Typography>
+            <br/>
+            <br/>
+            <Link to='/booking' style={{textDecoration: 'none'}}>
+              <Button 
+              variant='contained'
+              style={{
+                backgroundColor: '#726e69c2',
+                color: '#fff',
+                fontSize: '20px',
+                borderRadius: '10px' }}
+              >
+                Get a quote today
+              </Button>
+            </Link>
+            
+          </div>
+        </div>
+      </Parallax>
       
     </div>
   )
 }
 
 export default Home
+
+
+
+
+

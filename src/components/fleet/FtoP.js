@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import {Container, Card, Typography, CardContent, Grid, Box, CardActions} from '@mui/material';
-import {Link} from 'react-router-dom';
+import { Card, Typography, CardContent, Grid} from '@mui/material';
 
 //importing the images
 import falconint from '../../assets/images/fleet/Falcon900EXInterior.jpg';
@@ -90,7 +88,6 @@ const imgExpress=[
 ];
 
 function FtoP() {
-    const theme = useTheme();
     
   return (
     <div>

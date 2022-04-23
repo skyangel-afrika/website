@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { Card, Typography, CardContent, Grid} from '@mui/material';
@@ -78,7 +77,6 @@ const imgChallenger600=[
 ];
 
 function BeechcraftChallenger() {
-    const theme = useTheme();
     
   return (
     <div>

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { Card, Typography, CardContent, Grid} from '@mui/material';
@@ -40,7 +39,7 @@ const imgEmbraer = [
 ];
 const imgBoeing767 =[
     {
-      boeing767Img: boeing737Ext,
+      boeing767Img: boeing767Ext,
     },
     {
       boeing767Img: boeing767Int,
@@ -56,7 +55,6 @@ const imgBoeing737=[
 ];
 
 function TheRest() {
-    const theme = useTheme();
     
   return (
     <div>

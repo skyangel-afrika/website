@@ -10,6 +10,7 @@ import home2 from '../assets/images/homepage/slide2.jpg';
 
 import AboutUs from '../components/homepage/AboutUs';
 import CarouselContainer from '../components/homepage/Carousel';
+import SkyEvents from '../components/homepage/SkyEvents';
 
 
 const imageText = {
@@ -110,6 +111,7 @@ function Home() {
           </div>
         </div>
       </Parallax>
+      <SkyEvents/>
       
     </div>
   )

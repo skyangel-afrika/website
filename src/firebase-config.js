@@ -1,27 +1,25 @@
-import firebase from 'firebase'
+import { getFirestore } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
 
-var firebaseConfig = {
-  apiKey: "AIzaSyBazQ8QwsqutL7an-PCerQVxK7TEYYUDSM",
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
 
-  authDomain: "skyangel-afrika.firebaseapp.com",
+  authDomain: 'skyangel-afrika.firebaseapp.com',
 
-  databaseURL: "https://skyangel-afrika-default-rtdb.firebaseio.com",
+  databaseURL: 'https://skyangel-afrika-default-rtdb.firebaseio.com',
 
-  projectId: "skyangel-afrika",
+  projectId: 'skyangel-afrika',
 
-  storageBucket: "skyangel-afrika.appspot.com",
+  storageBucket: 'skyangel-afrika.appspot.com',
 
-  messagingSenderId: "685017196183",
+  messagingSenderId: '685017196183',
 
-  appId: "1:685017196183:web:f2cbf5129c035d52e82bd2",
+  appId: '1:685017196183:web:f2cbf5129c035d52e82bd2',
 
-  measurementId: "G-91JB4YKNYR"
-  };
+  measurementId: 'G-91JB4YKNYR'
+};
 
-  
-  firebase.initializeApp(firebaseConfig);
 
-  var db = firebase.firestore();
-
-  export {db};
-
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+export { db };

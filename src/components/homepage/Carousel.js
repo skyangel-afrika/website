@@ -39,7 +39,7 @@ export default function CarouselContainer () {
           data={data}
           time={5000}
           width='1350px'
-          height='600px'
+          height='550px'
           captionStyle={captionStyle}
           radius='10px'
           captionPosition='bottom'
@@ -48,8 +48,9 @@ export default function CarouselContainer () {
           style={{
             textAlign: 'center',
             maxWidth: '1350px',
-            maxHeight: '600px',
-            margin: 'auto',
+            maxHeight: '550px',
+            margin: ' auto',
+            marginBottom: '40px'
           }}
         />
       </div>

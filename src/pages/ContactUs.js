@@ -73,21 +73,18 @@ export default function ContactUs() {
         </Card>
       </Grid>
       <Container maxWidth='md' alignItems='center' >
-        <Email style={{ size: '20px' }} />
-        <Typography variant='h6' align='center'>
-          info@skyangel.co.zw
-        </Typography>
-        <Typography variant='h6' align='center'>
+        <Email style={{ size: '20px', color: '#fff'}} />
+        <Typography variant='h6' align='center' style={{color: '#fff'}}>
           skyangel.afrika@gmail.com
         </Typography>
         <br />
-        <WhatsApp />
-        <Typography variant='h6' align='center'>
+        <WhatsApp  style={{color: '#fff'}} />
+        <Typography variant='h6' align='center'  style={{color: '#fff'}}>
           +27 67 102 7074
         </Typography>
         <br />
-        <Call />
-        <Typography variant='h6' align='center'>
+        <Call  style={{color: '#fff'}}/>
+        <Typography variant='h6' align='center'  style={{color: '#fff'}}>
           +263 77 550 4960
         </Typography>
         <br />

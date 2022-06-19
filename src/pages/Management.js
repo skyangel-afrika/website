@@ -44,7 +44,7 @@ export default function Management() {
                   </Typography>
                   <hr />
                   <Typography variant="body2" color="text.secondary" component="div">
-                    Nyasha is a business Development, marketing and sales maverick. His profesional life has seen him working with startups as well as struggling companies on has left a trail of success. He is a holder of a Private Pilot License working towards his commercial license. He is also a holder of a BS in Business Administration and a diploma in Economics and International business.
+                    Nyasha is a business Development, marketing and sales maverick. His profesional life has seen him working with startups as well as struggling companies . He is a holder of a Private Pilot License working towards his commercial license. He is also a holder of a BS in Business Administration and a diploma in Economics and International business.
                   </Typography>
                 </CardContent>
               </Box>

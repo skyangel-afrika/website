@@ -2,7 +2,7 @@ import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_KEY,
+  apiKey: 'AIzaSyBazQ8QwsqutL7an-PCerQVxK7TEYYUDSM',
 
   authDomain: 'skyangel-afrika.firebaseapp.com',
 

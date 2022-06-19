@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import home1 from '../assets/images/homepage/slide6.jpg';
-import home2 from '../assets/images/homepage/slide2.jpg';
+import home2 from '../assets/images/homepage/slide4.jpg';
 
 
 import AboutUs from '../components/homepage/AboutUs';

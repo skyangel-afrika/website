@@ -1,33 +1,65 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material';
-import emailjs from '@emailjs/browser';
-import ReactPhoneInput from 'react-phone-input-mui';
+import { collection, addDoc } from "firebase/firestore";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
-import background from '../assets/images/homepage/slide8.jpg'
+import { db } from '../firebase-config';
+import background from '../assets/images/homepage/slide8.jpg';
 
 export default function Booking(props) {
 
-  const { value, defaultCountry, onChange } = props;
-  const [loader, SetLoader] = useState(false)
+  const [loader, setLoader] = useState(false)
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [departing, setDeparting] = useState('');
+  const [arriving, setArriving] = useState('');
+  const [travellingDate, setTravellingDate] = useState('');
+  const [passengers, setPassengers] = useState('');
 
-  const form = useRef();
+  const handleChange = (newPhone) => {
+    setPhone(newPhone)
+  }
 
-  const sendEmail = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    SetLoader(true)                     
+    setLoader(true);
 
-    emailjs.sendForm('SkyAngel', 'skyangel_reservations', form.current, 'CVbmnWNto-qCmsU1x')
-      .then((result) => {
-        console.log(result.text);
+    await addDoc(collection(db, 'reservations'), {
+      createdAt: new Date(),
+      name: name,
+      surname: surname,
+      email: email,
+      phone: phone,
+      departing: departing,
+      travellingDate: travellingDate,
+      arriving: arriving,
+      passengers: passengers
+
+    })
+      .then(() => {
+        setLoader(false);
         alert('Submission successful, we will get back to you');
-        SetLoader(false)
-      }, (error) => {
-        console.log(error.text);
-        alert('Error! Please try again')
-        SetLoader(false)
+      })
+      .catch((error) => {
+        alert(error.message);
+        setLoader(false);
       });
-    form.current.reset()
+
+    setName('');
+    setSurname('');
+    setEmail('');
+    setPhone('');
+    setArriving('');
+    setDeparting('');
+    setTravellingDate('');
+    setPassengers('');
   };
+
+
 
   return (
     <div style={{ marginTop: '-80px', backgroundImage: `url(${background})` }}>
@@ -42,49 +74,101 @@ export default function Booking(props) {
             <Typography variant='body2' color='textSecondary' component='p' gutterBottom align='center'>
               Fill in the basics of your flight and we'll get back to you
             </Typography>
-            <form ref={form} onSubmit={sendEmail} >
+            <form onSubmit={handleSubmit} >
               <Grid container spacing={1}>
                 <Grid xs={12} sm={6} item>
-                  <TextField placeholder='Enter first name' label='First Name' name='name' variant='outlined' fullWidth required />
+                  <TextField
+                    placeholder='Enter first name'
+                    label='First Name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    variant='outlined'
+                    fullWidth
+                    required
+                  />
                 </Grid>
                 <Grid xs={12} sm={6} item>
-                  <TextField placeholder='Enter surname' label='Surname' name='surname' variant='outlined' fullWidth required />
+                  <TextField
+                    placeholder='Enter surname'
+                    label='Surname'
+                    value={surname}
+                    onChange={(e) => setSurname(e.target.value)}
+                    variant='outlined'
+                    fullWidth required
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField type='email' placeholder='Enter email' label='Email' name='email' variant='outlined' fullWidth required />
+                  <TextField
+                    type='email'
+                    placeholder='Enter email'
+                    label='Email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    variant='outlined'
+                    fullWidth required
+                  />
                 </Grid>
-                <Grid item xs={12}>
-                  <ReactPhoneInput
-                    value={value}
-                    defaultCountry={defaultCountry || 'zw'}
-                    onChange={onChange}
-                    component={TextField}
-                    inputExtraProps={{
-                      margin: 'normal',
-                      autoComplete: 'phone',
-                      name: 'phone',
-                      placeholder: 'Phone number',
-                      label: 'Phone'
+                <Grid item xs={12} marginTop='5px'>
+                  <PhoneInput
+                    inputStyle={{ color: '#444444', background: '#e1e1e1' }}
+                    buttonStyle={{ background: '#e1e1e1'}}
+                    dropdownStyle={{ align: 'left',  background: '#e1e1e1'}}
+                    inputProps={{
+                      required: true,
                     }}
+                    country={'zw'}
+                    value={phone}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid xs={12} item>
-                  <TextField placeholder='Departing from' label='Departing' name='departing' variant='outlined' fullWidth required />
+                  <TextField
+                    placeholder='Departing from'
+                    label='Departing'
+                    value={departing}
+                    onChange={(e) => setDeparting(e.target.value)}
+                    variant='outlined'
+                    fullWidth required
+                  />
                 </Grid>
                 <Grid xs={12} item>
-                  <TextField type='date' placeholder='Date' name='date' variant='outlined' fullWidth required />
+                  <TextField
+                    type='date'
+                    placeholder='Date'
+                    value={travellingDate}
+                    onChange={(e) => setTravellingDate(e.target.value)}
+                    variant='outlined'
+                    fullWidth required
+                    background={'#e1e1e1'}
+                  />
                 </Grid>
                 <Grid xs={12} item>
-                  <TextField placeholder='Arriving At' label='Arriving' name='arriving' variant='outlined' fullWidth required />
+                  <TextField
+                    placeholder='Arriving At'
+                    label='Arriving'
+                    value={arriving}
+                    onChange={(e) => setArriving(e.target.value)}
+                    variant='outlined'
+                    fullWidth required
+                  />
                 </Grid>
                 <Grid xs={12} item>
-                  <TextField type='number' placeholder='Passengers' label='Passengers' name='Passengers' variant='outlined' fullWidth required />
+                  <TextField
+                    type='number'
+                    placeholder='Passengers'
+                    label='Passengers'
+                    name='Passengers'
+                    value={passengers}
+                    onChange={(e) => setPassengers(e.target.value)}
+                    variant='outlined'
+                    fullWidth required
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button type="submit"
-                    variant="contained"
+                  <Button type='submit'
+                    variant='contained'
                     style={{
-                      backgroundColor: loader ? '#ccc' : "#333333",
+                      backgroundColor: loader ? '#ccc' : '#333333',
                       color: '#e1e1e1',
                       fontSize: '14px',
                       borderRadius: 10,
@@ -98,9 +182,11 @@ export default function Booking(props) {
             </form>
           </CardContent>
         </Card>
-        <br/>
-        <br/>
+        <br />
+        <br />
       </Grid>
     </div>
   )
 }
+
+

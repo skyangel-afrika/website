@@ -18,11 +18,11 @@ function AboutUs() {
                 <br/>
 
             </Container>
-            <Grid container   style={{marginTop: '30px'}}  spacing={5} padding='40px, 0'  alignItems='stretch'>
+            <Grid container   style={{marginTop: '30px'}}  spacing={2} padding='40px, 0'  alignItems='stretch'>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Card  style ={{
                             backgroundImage: `url(${businessCharter})` , 
-                            height: '400px',
+                            height: '450px',
                         }}
                     >
                         <CardContent>
@@ -31,7 +31,7 @@ function AboutUs() {
                             </Typography>
                             <br/>
                             <Typography sx={{ mb: 1.5 }} style={{fontSize: "1.0rem", color: '#fff'}}>
-                                SkyAngel encompasses luxury, comfort, safety and flexibility to ensure an experience of a lifetime. The comfort and professional service of charter flying is unlimited. 
+                                SkyAngel encompasses luxury, comfort, safety and flexibility to ensure an experience of a lifetime. 
                             </Typography>
                         </CardContent>    
                     </Card>
@@ -39,7 +39,7 @@ function AboutUs() {
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Card  style ={{
                             backgroundImage: `url(${ambulance})` , 
-                            height: '400px',
+                            height: '450px',
                         }}
                     >
                         <CardContent>
@@ -56,7 +56,7 @@ function AboutUs() {
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Card  style ={{
                             backgroundImage: `url(${cargo})` , 
-                            height: '400px',
+                            height: '450px',
                         }}
                     >
                         <CardContent>

@@ -6,8 +6,8 @@ function SkyEvents() {
         <div>
             <Container maxWidth='lg' style={{ marginTop: '30px', marginBottom: '10px' }}>
                 <Container maxWidth='md'>
-                    <Typography variant='h4' align='center' style={{ color: '#333333' }} marginBottom='25px'>
-                        Coming Soon: SkyEvents
+                    <Typography variant='h5' align='center' style={{ color: '#333333' }} marginBottom='25px'>
+                        SkyEvents
                     </Typography>
                     <br />
                 </Container>

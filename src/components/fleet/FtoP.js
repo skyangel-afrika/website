@@ -10,9 +10,6 @@ import falconExt from '../../assets/images/fleet/Falcon900EXExterior.jpg';
 import gulfstreamInt from '../../assets/images/fleet/GulfstreamGVInterior.jpg';
 import gulfstreamExt from '../../assets/images/fleet/GulfstreamGVExterior.jpg';
 
-import hawkerInt from '../../assets/images/fleet/Hawker800XPInterior.jpg';
-import hawkerExt from '../../assets/images/fleet/Hawker800XPExterior.jpg';
-
 import learjet45Int from '../../assets/images/fleet/Learjet45Interior.jpg';
 import learjet45Ext from '../../assets/images/fleet/Learjet45Exterior.jpg';
 
@@ -45,14 +42,7 @@ const imgGulfs = [
       gulfstreamImg: gulfstreamExt,
     },
 ];
-const imgHawkers =[
-    {
-      hawkerImg: hawkerInt,
-    },
-    {
-      hawkerImg: hawkerExt,
-    },
-]
+
 const imgLearjet45=[
     {
       learjet45Img: learjet45Int,
@@ -138,7 +128,7 @@ function FtoP() {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
+                <Grid item xs={12} sm={6} md={6} lg={6}>
                     <Card style={{height: '400px', backgroundColor: '#e1e1e1'}}>
                         <CardContent>
                             <AutoPlaySwipeableViews
@@ -161,30 +151,7 @@ function FtoP() {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
-                    <Card style={{height: '400px', backgroundColor: '#e1e1e1'}}>
-                        <CardContent>
-                            <AutoPlaySwipeableViews
-                              enableMouseEvents
-                            >
-                              {imgHawkers.map(imgHawker => (
-                               
-                                <img
-                                 
-                                  src={imgHawker.hawkerImg}
-                                  alt='Hawker'
-                                  style={{height: '300px'}}
-                                />
-                              ))}
-                            </AutoPlaySwipeableViews>
-                            <hr/>
-                            <Typography variant='h6' align='center'>
-                                Hawker 800XP
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
+                <Grid item xs={12} sm={6} md={6} lg={6}>
                     <Card style={{height: '400px', backgroundColor: '#e1e1e1'}}>
                         <CardContent>
                             <AutoPlaySwipeableViews

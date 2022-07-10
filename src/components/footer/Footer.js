@@ -1,73 +1,140 @@
 import React from 'react';
-import './Footer.css';
-import { Typography } from '@mui/material';
+import { Typography, Divider, Container, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import cx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import { ColumnToRow, Row, Item } from '@mui-treasury/components/flex';
+import { NavMenu, NavItem } from '@mui-treasury/components/menu/navigation';
+import {
+  SocialProvider,
+  SocialLink,
+} from '@mui-treasury/components/socialLink';
+
+import { useMoonSocialLinkStyles } from '@mui-treasury/styles/socialLink/moon';
+import { usePlainNavigationMenuStyles } from '@mui-treasury/styles/navigationMenu/plain';
+
 
 import logo from '../../assets/images/logowhite.png'
 
-function Footer() {
-  return (
-    <div className='footer-container'>
-      <section className='footer-subscription'>
-        <Typography variant='h4' align='center' style={{color: '#fff'}}>
-          SkyAngel Private Jet Charters
-        </Typography>
-        <Typography variant='subtitle1' align='center'  style={{color: '#fff'}} component='p' >
-          {'All Rights Reserved ©'}  {new Date().getFullYear()}
-        </Typography>
-        <Typography variant='subtitle1' align='center'  style={{color: '#fff'}} component='p'>
-          (Terms and Conditions Apply)
-        </Typography>
-      </section>
-      <section class='social-media'>
-        <div class='social-media-wrap'>
-          <div class='footer-logo'>
-            <Link to='/' className='social-logo'>
-              <img src={logo} height='40px' alt='SkyAngel Private Jet Charters'/>
-            </Link>
-          </div>
-          <div class='social-icons'>
-            <a
-              class='social-icon-link facebook'
-              href='https://www.facebook.com/skyangel_afrika-103336232314323'
-              rel="noreferrer"
-              target='_blank'
-              aria-label='Facebook'
-            >
-              <i class='fab fa-facebook-f' />
-            </a>
-            <a
-              class='social-icon-link instagram'
-              rel="noreferrer"
-              href='https://www.instagram.com/skyangel_afrika/'
-              target='_blank'
-              aria-label='Instagram'
-            >
-              <i class='fab fa-instagram' />
-            </a>
-            <a
-              class='social-icon-link twitter'
-              href= 'https://www.twitter.com/skyangel_afrika/'
-              target='_blank'
-              rel="noreferrer"
-              aria-label='Twitter'
-            >
-              <i class='fab fa-twitter' />
-            </a>
-            <a
-              class='social-icon-link twitter'
-              href='https://za.linkedin.com/in/skyangel-private-charters-61b820226?trk=people_directory'
-              rel="noreferrer"
-              target='_blank'
-              aria-label='LinkedIn'
-            >
-              <i class='fab fa-linkedin' />
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
 
-export default Footer;
+const useStyles = makeStyles(({ typography, palette, breakpoints }) => ({
+  legalLink: {
+    ...typography.caption,
+    justifyContent: 'center',
+    color:
+      palette.type === 'dark'
+        ? 'rgba(255,255,255,0.57)'
+        : palette.text.secondary,
+    position: 'relative',
+    [breakpoints.up('sm')]: {
+      '&:not(:first-of-type)': {
+        '&:before': {
+          content: '"|"',
+          display: 'block',
+          position: 'absolute',
+          left: 0,
+        },
+      },
+    },
+  },
+  newsletter: {
+    fontSize: typography.caption.fontSize,
+  },
+  navMenu: {
+    flexWrap: 'wrap',
+  }
+}));
+
+export default function Footer() {
+  const classes = useStyles();
+  return (
+    <Box bgcolor={' #726e69'} width={'100%'}>
+      <Container>
+        <Box pt={8} pb={2}>
+          <Row wrap>
+            <Item grow={2}>
+              <Row alignItems={'center'}>
+                <Item>
+                  <Link to='/' >
+                    <img src={logo} height='40px' alt='SkyAngel Private Jet Charters' />
+                  </Link>
+                </Item>
+              </Row>
+              <NavMenu className={classes.navMenu} >
+                <Link to='/' style={{ textDecoration: 'none' }}>
+                  <NavItem style={{ color: '#fff' }}>Home</NavItem>
+                </Link>
+                <Link to='/fleet' style={{ textDecoration: 'none' }}>
+                  <NavItem style={{ color: '#fff' }}>Our Fleet</NavItem>
+                </Link>
+                <Link to='/team' style={{ textDecoration: 'none' }}>
+                  <NavItem style={{ color: '#fff' }}>Management</NavItem>
+                </Link>
+                <Link to='/booking' style={{ textDecoration: 'none' }}>
+                  <NavItem style={{ color: '#fff' }}>Reservations</NavItem>
+                </Link>
+              </NavMenu>
+            </Item>
+            <Item grow maxWidth={500} mx={'auto'}>
+              <Box textAlign={'center'} mt={{ xs: 2, md: 0 }} my={2}>
+                <SocialProvider useStyles={useMoonSocialLinkStyles}>
+                  <SocialLink
+                    style={{ color: '#e1e1e1' }}
+                    brand={'FacebookCircle'}
+                    href={'https://www.facebook.com/skyangel_afrika-103336232314323'}
+                  />
+                  <SocialLink
+                    style={{ color: '#e1e1e1' }}
+                    brand={'Twitter'}
+                    href={'https://www.twitter.com/skyangel_afrika/'}
+                  />
+                  <SocialLink
+                    brand={'Instagram'}
+                    href={'https://www.instagram.com/skyangel_afrika/'}
+                    style={{ color: '#e1e1e1' }}
+                  />
+                </SocialProvider>
+              </Box>
+            </Item>
+          </Row>
+        </Box>
+        <Divider />
+        <Box pt={2} pb={10}>
+          <ColumnToRow
+            at={'md'}
+            columnStyle={{ alignItems: 'center' }}
+            rowStyle={{ alignItems: 'unset' }}
+          >
+            <Item grow ml={-2} shrink={0}>
+              <NavMenu useStyles={usePlainNavigationMenuStyles}>
+                <ColumnToRow at={'sm'}>
+                  <Link to='/terms-and-conditions' style={{ textDecoration: 'none' }}>
+                    <NavItem className={cx(classes.legalLink)} style={{ color: '#fff' }}>
+                      Terms & Conditions
+                    </NavItem>
+                  </Link>
+                  <Link to='/privacy-policy' style={{ textDecoration: 'none' }}>
+                    <NavItem className={cx(classes.legalLink)} style={{ color: '#fff' }}>
+                      Privacy Policy
+                    </NavItem>
+                  </Link>
+                </ColumnToRow>
+              </NavMenu>
+            </Item>
+            <Item>
+              <Box py={1} textAlign={{ xs: 'center', md: 'right' }}>
+                <Typography
+                  component={'p'}
+                  variant={'caption'}
+                  color={'#fff'}
+                >
+                  <a style={{color: '#fff'}} target='_blank' href='https://rusero.co.zw'>SiDesigned</a> © SkyAngel Private Jet Charters {new Date().getFullYear()}. All right reserved
+                </Typography>
+              </Box>
+            </Item>
+          </ColumnToRow>
+        </Box>
+      </Container>
+    </Box>
+  );
+};

@@ -11,6 +11,7 @@ import home2 from '../assets/images/homepage/slide4.jpg';
 import AboutUs from '../components/homepage/AboutUs';
 import CarouselContainer from '../components/homepage/Carousel';
 import SkyEvents from '../components/homepage/SkyEvents';
+import ContactUs from '../components/homepage/ContactUs'
 
 
 const imageText = {
@@ -104,7 +105,7 @@ function Home() {
                 fontSize: '20px',
                 borderRadius: '10px' }}
               >
-                Get a quote today
+                Get a quote
               </Button>
             </Link>
             
@@ -112,6 +113,7 @@ function Home() {
         </div>
       </Parallax>
       <SkyEvents/>
+      <ContactUs/>
       
     </div>
   )

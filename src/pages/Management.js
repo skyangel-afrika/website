@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import { CardContent, CardMedia, Typography, Container, Grid } from '@mui/material';
 
 import background from '../assets/images/homepage/slide8.jpg';
-import nyasha from '../assets/images/team/nyasha.jpeg';
+import nyasha from '../assets/images/team/nyasha.jpg';
 import mudiwa from '../assets/images/team/mudiwa.jpg';
 import desmond from '../assets/images/team/desmond.jpg';
 

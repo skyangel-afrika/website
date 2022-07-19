@@ -1,25 +1,22 @@
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
+import { getStorage } from 'firebase/storage';
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBazQ8QwsqutL7an-PCerQVxK7TEYYUDSM',
-
-  authDomain: 'skyangel-afrika.firebaseapp.com',
-
-  databaseURL: 'https://skyangel-afrika-default-rtdb.firebaseio.com',
-
-  projectId: 'skyangel-afrika',
-
-  storageBucket: 'skyangel-afrika.appspot.com',
-
-  messagingSenderId: '685017196183',
-
-  appId: '1:685017196183:web:f2cbf5129c035d52e82bd2',
-
-  measurementId: 'G-91JB4YKNYR'
+  apiKey: process.env.REACT_APP_FIRE_BASE_KEY,
+  authDomain: process.env.REACT_APP_FIRE_BASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIRE_BASE_DB_URL,
+  projectId: process.env.REACT_APP_FIRE_BASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIRE_BASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIRE_BASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIRE_BASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIRE_BASE_MEASURMENT_ID,
 };
 
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 export { db };
+export const storage = getStorage(app);
+export const auth = getAuth(app);

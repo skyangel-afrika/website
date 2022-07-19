@@ -4,13 +4,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import SideDrawer from './components/SideDrawer';
-import ReservationsTable from './components/reservations/ReservationsTable';
+import SkyReservationsTable from './components/reservations/SkyReservationsTable';
 
 
 
 const mdTheme = createTheme();
 
-const Reservations = () => {
+const SkyReservations = () => {
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -30,10 +30,10 @@ const Reservations = () => {
           }}
         >
          <Typography variant='h5' style={{marginTop:'20px'}}>
-            Reservations
+            SkyEvents Reservations
           </Typography>
           <br/>
-          <ReservationsTable/>
+          <SkyReservationsTable/>
         </Box>
       </Box>
     </ThemeProvider>
@@ -41,6 +41,6 @@ const Reservations = () => {
 };
 
 
-export default Reservations
+export default SkyReservations
 
 

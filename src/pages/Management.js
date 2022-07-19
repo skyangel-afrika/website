@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { CardContent, CardMedia, Typography, Container, Grid } from '@mui/material';
+import { Helmet } from 'react-helmet';
 
 import background from '../assets/images/homepage/slide8.jpg';
 import nyasha from '../assets/images/team/nyasha.jpg';
@@ -12,6 +13,9 @@ export default function Management() {
 
   return (
     <div style={{ marginTop: '-60px', backgroundImage: `url(${background})` }}>
+      <Helmet>
+        <title>Team | SkyAngel</title>
+      </Helmet>
       <br />
       <br />
       <br />
@@ -23,7 +27,7 @@ export default function Management() {
       <Container maxWidth='lg'>
         <Grid container spacing={5} padding='40px, 0' alignItems='stretch' justifyContent='center'>
           <Grid item xs={9.4} sm={4.8} md={4.8} lg={2.9}>
-            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px' }} >
+            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px', border: "none", boxShadow: "none"}} >
               <CardMedia
                 component="img"
                 sx={{ width: '242px', borderRadius: '50%', align: 'center' }}
@@ -51,7 +55,7 @@ export default function Management() {
             </Card>
           </Grid>
           <Grid item xs={9.4} sm={4.8} md={4.8} lg={2.9}>
-            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px' }} >
+            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px', border: "none", boxShadow: "none" }} >
               <CardMedia
                 component="img"
                 sx={{ width: '242px', borderRadius: '50%', align: 'center' }}
@@ -79,7 +83,7 @@ export default function Management() {
             </Card>
           </Grid>
           <Grid item xs={9.4} sm={4.8} md={4.8} lg={2.9}>
-            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px' }} >
+            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px', border: "none", boxShadow: "none" }} >
               <CardMedia
                 component="img"
                 sx={{ width: '242px', borderRadius: '50%', align: 'center' }}

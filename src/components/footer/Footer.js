@@ -108,12 +108,12 @@ export default function Footer() {
             <Item grow ml={-2} shrink={0}>
               <NavMenu useStyles={usePlainNavigationMenuStyles}>
                 <ColumnToRow at={'sm'}>
-                  <Link to='/terms-and-conditions' style={{ textDecoration: 'none' }}>
+                  <Link to='/terms-and-conditions' target='_blank'  rel='noreferrer' style={{ textDecoration: 'none' }}>
                     <NavItem className={cx(classes.legalLink)} style={{ color: '#fff' }}>
                       Terms & Conditions
                     </NavItem>
                   </Link>
-                  <Link to='/privacy-policy' style={{ textDecoration: 'none' }}>
+                  <Link to='/privacy-policy' target='_blank'  rel='noreferrer' style={{ textDecoration: 'none' }}>
                     <NavItem className={cx(classes.legalLink)} style={{ color: '#fff' }}>
                       Privacy Policy
                     </NavItem>
@@ -128,7 +128,7 @@ export default function Footer() {
                   variant={'caption'}
                   color={'#fff'}
                 >
-                  <a style={{color: '#fff'}} target='_blank' href='https://rusero.co.zw'>SiDesigned</a> © SkyAngel Private Jet Charters {new Date().getFullYear()}. All right reserved
+                  <a style={{color: '#fff'}} target='_blank'  rel='noreferrer' href='https://rusero.co.zw'>SiDesigned</a> © SkyAngel Private Jet Charters {new Date().getFullYear()}. All right reserved
                 </Typography>
               </Box>
             </Item>

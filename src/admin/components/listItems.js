@@ -37,6 +37,14 @@ export const mainListItems = (
         <ListItemText primary="SkyEvents" />
       </ListItemButton>
     </Link>
+    <Link to='/admin/sky-reservations' style={{ textDecoration: 'none', color: '#333333' }}>
+      <ListItemButton>
+        <ListItemIcon>
+          <EventIcon />
+        </ListItemIcon>
+        <ListItemText primary="SkyReservations" />
+      </ListItemButton>
+    </Link>
   </React.Fragment>
 );
 

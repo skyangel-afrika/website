@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material';
 import { collection, addDoc } from "firebase/firestore";
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import { Helmet } from 'react-helmet';
 
 import { db } from '../firebase-config';
 import background from '../assets/images/homepage/slide8.jpg';
@@ -63,6 +64,9 @@ export default function Booking(props) {
 
   return (
     <div style={{ marginTop: '-80px', backgroundImage: `url(${background})` }}>
+      <Helmet>
+        <title>Bookings | SkyAngel</title>
+      </Helmet>
       <br />
       <br />
       <Grid>
@@ -111,8 +115,8 @@ export default function Booking(props) {
                 <Grid item xs={12} marginTop='5px'>
                   <PhoneInput
                     inputStyle={{ color: '#444444', background: '#e1e1e1' }}
-                    buttonStyle={{ background: '#e1e1e1'}}
-                    dropdownStyle={{ align: 'left',  background: '#e1e1e1'}}
+                    buttonStyle={{ background: '#e1e1e1' }}
+                    dropdownStyle={{ align: 'left', background: '#e1e1e1' }}
                     inputProps={{
                       required: true,
                     }}

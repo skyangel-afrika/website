@@ -3,6 +3,7 @@ import {Parallax} from 'react-parallax';
 import { Typography, Button, Container } from '@mui/material';
 import {Link} from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Helmet } from 'react-helmet';
 
 import home1 from '../assets/images/homepage/slide6.jpg';
 import home2 from '../assets/images/homepage/slide4.jpg';
@@ -27,6 +28,9 @@ const imageText = {
 function Home() {
   return (
     <div >
+      <Helmet>
+        <title>Home | SkyAngel Private Jet Charters</title>
+      </Helmet>
       <CarouselContainer />
       <AboutUs />
       

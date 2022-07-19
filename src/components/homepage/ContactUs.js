@@ -1,23 +1,25 @@
-import React, { useRef } from 'react';
-import { Grid, TextField, Button, Card, CardContent, Typography, Container, Stack } from '@mui/material';
+import React, { useRef, useState } from 'react';
+import { Grid, TextField, Button,  CardContent, Typography, Container, Stack } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import { FlightTakeoff, TravelExplore, CandlestickChart, Language } from '@mui/icons-material';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
 export default function ContactUs() {
-  const theme = useTheme();
   const form = useRef();
+  const [loader, setLoader] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoader(true);
 
     emailjs.sendForm('SkyAngel', 'skyangelContact', form.current, 'CVbmnWNto-qCmsU1x')
       .then((result) => {
         console.log(result.text);
+        setLoader(false);
         alert('Submission successful, we will get back to you');
       }, (error) => {
         console.log(error.text);
+        setLoader(false);
         alert('Error! Please try again')
       });
     form.current.reset()
@@ -48,10 +50,10 @@ export default function ContactUs() {
                   <Button type="submit"
                     variant="contained"
                     style={{
-                      backgroundColor: '#333333',
+                      backgroundColor: loader ? '#ccc' : '#333333',
                       color: '#e1e1e1',
                       fontSize: '14px',
-                      borderRadius: 10
+                      borderRadius: 10,
                     }}
                   >
                     Submit

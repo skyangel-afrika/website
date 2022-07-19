@@ -1,9 +1,13 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
+import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
     return (
         <div>
+            <Helmet>
+                <title>Privacy Policy | SkyAngel</title>
+            </Helmet>
 
             <Container maxWidth='md' style={{ marginTop: '20px', marginBottom: '20px' }}>
                 <Typography variant='h4' color='#03396c'>

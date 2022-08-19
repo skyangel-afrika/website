@@ -119,7 +119,7 @@ export default function Event() {
                           </Grid>
                           <Grid item xs={12} marginTop='5px'>
                             <MuiPhoneNumber
-                              defaultCountry={'us'}
+                              defaultCountry={'zw'}
                               fullWidth
                               required
                               value={phone}

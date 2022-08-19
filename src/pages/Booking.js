@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, TextField, Button, Card, CardContent, Typography } from '@mui/material';
 import { collection, addDoc } from "firebase/firestore";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+import MuiPhoneNumber from 'material-ui-phone-number'
 import { Helmet } from 'react-helmet';
 
 import { db } from '../firebase-config';
@@ -19,10 +18,6 @@ export default function Booking(props) {
   const [arriving, setArriving] = useState('');
   const [travellingDate, setTravellingDate] = useState('');
   const [passengers, setPassengers] = useState('');
-
-  const handleChange = (newPhone) => {
-    setPhone(newPhone)
-  }
 
 
   const handleSubmit = async (e) => {
@@ -113,16 +108,12 @@ export default function Booking(props) {
                   />
                 </Grid>
                 <Grid item xs={12} marginTop='5px'>
-                  <PhoneInput
-                    inputStyle={{ color: '#444444', background: '#e1e1e1' }}
-                    buttonStyle={{ background: '#e1e1e1' }}
-                    dropdownStyle={{ align: 'left', background: '#e1e1e1' }}
-                    inputProps={{
-                      required: true,
-                    }}
-                    country={'zw'}
+                  <MuiPhoneNumber
+                    defaultCountry={'zw'}
+                    fullWidth
+                    required
                     value={phone}
-                    onChange={handleChange}
+                    onChange={(value) => setPhone(value)}
                   />
                 </Grid>
                 <Grid xs={12} item>

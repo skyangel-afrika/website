@@ -53,6 +53,15 @@ function Header() {
             </li>
             <li className='nav-item'>
               <Link
+                to='/cargo'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Cargo
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
                 to='/team'
                 className='nav-links'
                 onClick={closeMobileMenu}

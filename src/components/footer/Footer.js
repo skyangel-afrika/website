@@ -9,6 +9,7 @@ import {
   SocialProvider,
   SocialLink,
 } from '@mui-treasury/components/socialLink';
+import {Link as LinkMUI} from '@mui/material';
 
 import { useMoonSocialLinkStyles } from '@mui-treasury/styles/socialLink/moon';
 import { usePlainNavigationMenuStyles } from '@mui-treasury/styles/navigationMenu/plain';
@@ -73,6 +74,9 @@ export default function Footer() {
                 <Link to='/booking' style={{ textDecoration: 'none' }}>
                   <NavItem style={{ color: '#fff' }}>Reservations</NavItem>
                 </Link>
+                <Link to='/cargo' style={{ textDecoration: 'none' }}>
+                  <NavItem style={{ color: '#fff' }}>Cargo</NavItem>
+                </Link>
               </NavMenu>
             </Item>
             <Item grow maxWidth={500} mx={'auto'}>
@@ -128,7 +132,7 @@ export default function Footer() {
                   variant={'caption'}
                   color={'#fff'}
                 >
-                  <a style={{color: '#fff'}} target='_blank'  rel='noreferrer' href='https://rusero.co.zw'>SiDesigned</a> © SkyAngel Private Jet Charters {new Date().getFullYear()}. All right reserved
+                  <LinkMUI style={{color: '#fff'}} target='_blank'  rel='noreferrer' href='https://rusero.co.zw'>SiDesigned</LinkMUI> © SkyAngel Private Jet Charters {new Date().getFullYear()}. All right reserved
                 </Typography>
               </Box>
             </Item>

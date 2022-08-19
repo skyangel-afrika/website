@@ -7,6 +7,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import EventIcon from '@mui/icons-material/Event';
+import LuggageIcon from '@mui/icons-material/Luggage';
 import { Link } from 'react-router-dom';
 
 
@@ -27,6 +28,14 @@ export const mainListItems = (
           <FlightTakeoffIcon />
         </ListItemIcon>
         <ListItemText primary="Reservations" />
+      </ListItemButton>
+    </Link>
+    <Link to='/admin/cargo-reservations' style={{ textDecoration: 'none', color: '#333333' }}>
+      <ListItemButton >
+        <ListItemIcon>
+          <LuggageIcon />
+        </ListItemIcon>
+        <ListItemText primary="Cargo Reservations" />
       </ListItemButton>
     </Link>
     <Link to='/admin/sky-events' style={{ textDecoration: 'none', color: '#333333' }}>

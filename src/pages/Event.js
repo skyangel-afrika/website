@@ -2,8 +2,7 @@ import { doc, onSnapshot, collection, addDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase-config";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+import MuiPhoneNumber from 'material-ui-phone-number';
 import { Helmet } from 'react-helmet';
 import { Container, Grid, Card, CardContent, CardMedia, Typography, Box, TextField, Button } from "@mui/material";
 
@@ -15,9 +14,7 @@ export default function Event() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
-  const handleChange = (newPhone) => {
-    setPhone(newPhone)
-  }
+
 
   useEffect(() => {
     const docRef = doc(db, "skyevents", id);
@@ -121,16 +118,12 @@ export default function Event() {
                             />
                           </Grid>
                           <Grid item xs={12} marginTop='5px'>
-                            <PhoneInput
-                              inputStyle={{ color: '#444444', background: '#f5f5f5', fontSize: '15px' }}
-                              buttonStyle={{ background: '#f5f5f5' }}
-                              dropdownStyle={{ align: 'left', background: '#f5f5f5' }}
-                              inputProps={{
-                                required: true,
-                              }}
-                              country={'zw'}
+                            <MuiPhoneNumber
+                              defaultCountry={'us'}
+                              fullWidth
+                              required
                               value={phone}
-                              onChange={handleChange}
+                              onChange={(value) => setPhone(value)}
                             />
                           </Grid>
                           <Grid item xs={12}>

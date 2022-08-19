@@ -15,6 +15,7 @@ import PrivacyPolicy from './components/footer/PrivacyPolicy';
 import Login from './admin/Login';
 import Dashboard from './admin/Dashboard';
 import Reservations from './admin/Reservations';
+import CargoReservations from './admin/CargoReservations';
 import SkyEvents from './admin/SkyEvents';
 import SkyReservations from './admin/SkyReservations';
 import AddEvent from './admin/AddEvent';
@@ -22,6 +23,7 @@ import AddEvent from './admin/AddEvent';
 import PrivateRoute from './routes/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
 import BadRoute from './components/homepage/BadRoute';
+import Cargo from './pages/Cargo';
 
 
 
@@ -37,8 +39,9 @@ function App() {
           <Route path='/team' exact element={<Management />} />
           <Route path='/booking' exact element={<Booking />} />
           <Route path='/skyevents/:id' exact element={<Event />} />
+          <Route path='/cargo' exact element={<Cargo />} />
           <Route path='/admin' exact element={<Login />} />
-          <Route path='*' element={<BadRoute/>} />
+          <Route path='*' element={<BadRoute />} />
           <Route path='/admin/dashboard' exact element={
             <PrivateRoute>
               <Dashboard />
@@ -67,6 +70,11 @@ function App() {
           <Route path='admin/sky-reservations' exact element={
             <PrivateRoute>
               <SkyReservations />
+            </PrivateRoute>
+          } />
+          <Route path='admin/cargo-reservations' exact element={
+            <PrivateRoute>
+              <CargoReservations />
             </PrivateRoute>
           } />
 

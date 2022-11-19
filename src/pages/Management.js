@@ -27,7 +27,35 @@ export default function Management() {
       <Container maxWidth='lg'>
         <Grid container spacing={5} padding='40px, 0' alignItems='stretch' justifyContent='center'>
           <Grid item xs={9.4} sm={4.8} md={4.8} lg={2.9}>
-            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px', border: "none", boxShadow: "none"}} >
+            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px', border: "none", boxShadow: "none" }} >
+              <CardMedia
+                component="img"
+                sx={{ width: '242px', borderRadius: '50%', align: 'center' }}
+                image={mudiwa}
+                alt="Mudiwa Hood"
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={7.2} md={7.2} lg={7}>
+            <Card sx={{ backgroundColor: '#e1e1e1', height: '250px' }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <CardContent sx={{ flex: '0 0 auto' }}>
+                  <Typography component="div" variant="h5">
+                    Mudiwa Hood
+                  </Typography>
+                  <Typography variant="subtitle1" color="text.secondary" component="div">
+                    CEO
+                  </Typography>
+                  <hr />
+                  <Typography variant="body2" color="text.secondary" component="div">
+                    Mudiwa is a multi award winning Christian Rapper from Zimbabwe. He has a Masters in finance and a BS in Economics. With his academic background he has had over a decade working in the banking sector until turned enterprenuer. He has founded and co-founded several businesss
+                  </Typography>
+                </CardContent>
+              </Box>
+            </Card>
+          </Grid>
+          <Grid item xs={9.4} sm={4.8} md={4.8} lg={2.9}>
+            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px', border: "none", boxShadow: "none" }} >
               <CardMedia
                 component="img"
                 sx={{ width: '242px', borderRadius: '50%', align: 'center' }}
@@ -44,7 +72,7 @@ export default function Management() {
                     Nyasha Paradzai
                   </Typography>
                   <Typography variant="subtitle1" color="text.secondary" component="div">
-                    CEO
+                    COO
                   </Typography>
                   <hr />
                   <Typography variant="body2" color="text.secondary" component="div">
@@ -76,35 +104,7 @@ export default function Management() {
                   </Typography>
                   <hr />
                   <Typography variant="body2" color="text.secondary" component="div">
-                  Desmond is a multi award winning hiphop artist in Zimbabwe whose music career has taken him to every continent on the planet. He has received several awards locally and internationally for his musical prowess. He is a fully qualified fashion designer and owner of a leading clothing line. He is also a qualified motor mechanic. 
-                  </Typography>
-                </CardContent>
-              </Box>
-            </Card>
-          </Grid>
-          <Grid item xs={9.4} sm={4.8} md={4.8} lg={2.9}>
-            <Card sx={{ justifyContent: 'center', backgroundColor: '#0000ff00', height: '250px', border: "none", boxShadow: "none" }} >
-              <CardMedia
-                component="img"
-                sx={{ width: '242px', borderRadius: '50%', align: 'center' }}
-                image={mudiwa}
-                alt="Mudiwa Hood"
-              />
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={7.2} md={7.2} lg={7}>
-            <Card sx={{ backgroundColor: '#e1e1e1', height: '250px' }}>
-              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                <CardContent sx={{ flex: '0 0 auto' }}>
-                  <Typography component="div" variant="h5">
-                    Mudiwa Hood
-                  </Typography>
-                  <Typography variant="subtitle1" color="text.secondary" component="div">
-                    Director
-                  </Typography>
-                  <hr />
-                  <Typography variant="body2" color="text.secondary" component="div">
-                  Mudiwa is a multi award winning Christian Rapper from Zimbabwe. He has a Masters in finance and a BS in Economics. With his academic background he has had over a decade working in the banking sector until turned enterprenuer. He has founded and co-founded several businesss 
+                    Desmond is a multi award winning hiphop artist in Zimbabwe whose music career has taken him to every continent on the planet. He has received several awards locally and internationally for his musical prowess. He is a fully qualified fashion designer and owner of a leading clothing line. He is also a qualified motor mechanic.
                   </Typography>
                 </CardContent>
               </Box>

@@ -80,10 +80,11 @@ function Home() {
         <Typography  style={{color: '#333333', fontSize: '1.1rem'}} align='center'>
           Yours in flight,
         </Typography>
-        <Typography  style={{color: '#333333', fontSize: '1.1rem'}} align='center'>
-          Nyasha Paradzai
+        <br/>
+        <Typography  style={{color: '#333333', fontSize: '1.1rem', fontWeight:'bold'}} align='center'>
+          Mudiwa Hood
         </Typography>
-        <Typography variant='subtitle1' align='center'>
+        <Typography variant='subtitle2' align='center'>
           CEO
         </Typography>
         <br/>

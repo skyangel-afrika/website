@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Grid, TextField, Button,  CardContent, Typography, Container, Stack } from '@mui/material';
+import { Grid, TextField, Button, CardContent, Typography, Container, Stack } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import { FlightTakeoff, TravelExplore, CandlestickChart, Language } from '@mui/icons-material';
 import Box from '@mui/material/Box';
@@ -75,7 +75,7 @@ export default function ContactUs() {
                   skyangel.afrika@gmail.com
                 </Typography>
                 <Typography variant='subtitle' color="text.secondary" component="div" align='left'>
-                  +263 77 550 4960
+                  +263 77 496 8265
                 </Typography>
                 <br />
                 <br />
@@ -104,10 +104,10 @@ export default function ContactUs() {
                   </Typography>
                 </Stack>
                 <Typography variant='subtitle' color="text.secondary" component="div" align='left'>
-                  nyasha@skyangel.co.zw
+                  mudiwa@skyangel.co.zw
                 </Typography>
                 <Typography variant='subtitle' color="text.secondary" component="div" align='left'>
-                  +27 67 102 7074
+                  +263 77 295 7770
                 </Typography>
                 <br />
                 <br />
